@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+<link rel="stylesheet" href="OnsenUI/css/onsen-css-components.css">
+<script src="OnsenUI/js/onsenui.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA2aOo7c2ZzWgFy_gp5LvUw89SuA5zPmJ0",
+    authDomain: "smrtgarder.firebaseapp.com",
+    databaseURL: "https://smrtgarder.firebaseio.com",
+    projectId: "smrtgarder",
+    storageBucket: "smrtgarder.appspot.com",
+    messagingSenderId: "883477882726"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="index.js"></script>
+<script src="js/click.js"></script>
+
+<link rel="stylesheet" href="css/cool.css">
+<style>
+    ul {
+      list-style: none;
+    }
+    li{
+
+    }
+    
+    ul li::before {
+      content: "\2022";
+      color: white;
+      font-weight: bold;
+      display: inline-block; 
+      width: 1em;
+      margin-left: -1em;
+
+    }
+    </style>
+	<title>Cool</title>
+</head>
+<body>
+<ons-splitter>
+  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+    <ons-page>
+      <ons-list>
+        <ons-list-item onclick="fn.load('home.html')" tappable>
+          Home
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('settings.html')" tappable>
+          Settings
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('about.html')" tappable>
+          Live Stream
+        </ons-list-item>
+           <ons-list-item>
+      <div >
+
+        <ons-button onclick="logout()" >
+            log off
+        </ons-button>
+      </div>
+    </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-splitter-side>
+  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+</ons-splitter>
+
+<template id="home.html">
+  <ons-page onclick="sta()" >
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        SmrtGarder
+      </div>
+    </ons-toolbar>
+    <p id="pp" style="text-align: center; opacity: 0.6; padding-top: 20px;">
+      Swipe right to open the menu!
+    </p>
+   <div style ="font-size: 10px; margin: auto; opacity: 0.8; padding-top: 20px;" >
+ <h1 id="okey" style="text-align: center;" onclick="sta()">Plant Status</h1>
+    </div>
+   
+
+  <ons-speed-dial position="bottom right" direction="up">
+    <ons-fab>
+      <ons-icon icon="md-share"></ons-icon>
+    </ons-fab>
+    <ons-speed-dial-item>
+      <ons-icon icon="md-twitter"></ons-icon>
+    </ons-speed-dial-item>
+    <ons-speed-dial-item>
+      <ons-icon icon="md-facebook"></ons-icon>
+    </ons-speed-dial-item>
+    <ons-speed-dial-item>
+      <ons-icon icon="md-google-plus"></ons-icon>
+    </ons-speed-dial-item>
+    <ons-speed-dial-item>
+      <ons-icon icon="md-github"></ons-icon>
+    </ons-speed-dial-item>
+  </ons-speed-dial>
+
+
+  </ons-page>
+</template>
+
+<template id="settings.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Settings
+      </div>
+    </ons-toolbar>
+      <ons-list-header>Dev log to git server</ons-list-header>
+    <ons-list-item>
+      <div class="center">
+        Turn it on
+      </div>
+      <div class="right">
+        <ons-switch checked></ons-switch>
+      </div>
+    </ons-list-item>
+    <ons-list-item>
+      <div>
+
+        <ons-button onclick="logout()" >
+            log off
+        </ons-button>
+      </div>
+    </ons-list-item>
+  </ons-page>
+</template>
+
+<template id="about.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+       Live Stream
+      </div>
+    </ons-toolbar>
+    <div style="text-align: center; opacity: 0.6; padding-top: 20px;">
+    <img src="http://underdon-chihuahua-1038.dataplicity.io/" alt="http://underdon-chihuahua-1038.dataplicity.io" class="shrinkToFit" width="549" height="412">
+  </div>
+  </ons-page>
+</template>
+<script src="js/click.js"></script>
+</body>
+</html>
